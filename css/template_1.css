@@ -1,0 +1,471 @@
+/* Start Variables */
+:root {
+    --maincolor: #10cab7;
+    --secoudry-color: #2c4755;
+    --background-color: #f6f6f6;
+}
+/* End Variables */
+/* Start Global Rules */
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+font-family: "Work Sans", sans-serif;
+}
+/* To Make Structured Design */
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* End Global Rules */
+
+/* Start Components */
+.special-heading {
+    font-size: 100px;
+    font-weight: 800;
+    color: #ecebed;
+    text-align: center;
+    letter-spacing: -3px;
+    margin: 0;
+}
+.special-heading + p {
+    text-align: center;
+    font-size: 20px;
+    margin: -30px 0 0;
+    color: #797979;
+}
+@media (max-width: 767px) {
+    .special-heading {
+        font-size: 60px;
+    }
+    .special-heading + p {
+        margin: -20px;
+    }
+}
+/* End Components */
+
+
+/* Small */
+
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+
+/* Medium */
+
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+/* Large */
+
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+ /* Start Header And Links */
+
+.header {
+    padding: 20px;
+}
+.header .container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header .logo {
+    width: 60px;
+}
+.header .links {
+    position: relative;
+}
+.header .links .icons {
+    width: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+.header .links .icons span {
+    background-color: #333;
+    height: 2px;
+    margin-bottom: 5px;
+}
+.header .links .icons span:first-child {
+    width: 100%;
+}
+.header .links .icons span:nth-child(2) {
+    width: 60%;
+    transition: .3s;
+}
+.header .links .icons span:last-child {
+    width: 100%;
+}
+.header .links:hover .icons span:nth-child(2) {
+    width: 100%;
+}
+.header .links ul {
+    position: absolute;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    right: 0;
+    top: calc(100% + 15px);
+    min-width: 200px;
+    background-color: #eee;
+    display: none;
+    z-index: 1;
+}
+.header .links ul li:not(:last-child) a {
+    border-bottom: 1px solid #ddd;
+}
+.header .links ul a {
+    text-decoration: none;
+    color: #333;
+    transition: .3s;
+    display: block;
+    padding: 15px; 
+}
+.header .links ul::before {
+    content: "";
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent #eee transparent;
+    position: absolute;
+    top: -20px;
+    right: 5px;
+}
+.header .links ul a:hover {
+    padding-left: 25px;
+}
+.header .links:hover ul {
+    display: block;
+}
+/* 
+Do Not Forget Give <a> display:block; To Can Give padding(top,left)
+When You Wanna Use Postion To Control Element With Another Element Don't Take Postion That Element Can't Be On Another Element And calc(100% + px) Will Help When No Width , Height 
+*/
+ /* End Of Header And Links */
+
+/* Start Landing  */
+
+.landing {
+    background-image: url(../images/mountain.jpg);
+    background-size: cover;
+    height: 100vh;
+    position: relative;
+}
+.landing .landing-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 370px;
+    max-width: 100%;
+}
+.landing .landing-text h1 {
+    color: var(--maincolor);
+    margin: 0;
+    font-weight: bold;
+    font-size: 50px;
+}
+.landing .landing-text p {
+    color: #fff;
+    font-size: 19px;
+    line-height: 1.8;
+}
+/*
+Max-Width After Width Make Text Can Shrink But Can't Stretch 
+*/
+
+/* End Landing  */
+
+/* Start Features */
+.features {
+    padding-block: 60px;
+    background-color: var(--background-color);
+}
+.features .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    
+}
+.features .feat {
+    text-align: center;
+    text-transform: capitalize;
+    padding: 20px;
+}
+.features .feat i {
+    color: var(--maincolor);
+    font-size: 50px;
+}
+.features .feat h3 {
+    font-weight: 800;
+}
+.features .feat p {
+    line-height: 1.6;
+    color: #777;
+}
+
+/* End Features */
+
+/* Start Services  */
+
+.services {
+    padding-block: 60px;
+    text-transform: capitalize;
+}
+.services .services-content {
+    margin-top: 100px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px ,1fr));
+    grid-gap: 30px;
+}
+.services .services-content .srv {
+    display: flex;
+    margin-bottom: 40px;
+}
+@media (max-width: 767px) {
+    .services .services-content .srv {
+        display: flex;
+        margin-bottom: 40px;
+        flex-direction: column;
+        text-align: center;
+    }
+}
+@media (max-width: 1199px) {
+    .col .image {
+        display: none;
+    }
+}
+.services .services-content .srv .text {
+    flex: 1;
+}
+.services .services-content .srv i {
+    flex-basis: 60px;
+    color: var(--maincolor);
+}
+.services .services-content .srv h3 {
+    margin: 0;
+}
+.services .services-content .srv p {
+    font-weight: 300;
+    color: #444;
+    line-height: 1.6;
+}
+.col .image {
+    position: relative;
+    text-align: center;
+}
+.col .image::before {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: calc(100% + 100px);
+    right: 0;
+    top: -50px;
+    background: var(--secoudry-color);
+    z-index: -1;
+}
+.col .image img {
+    width: 260px;
+    height: 360px;
+}
+
+/* End Services  */
+/* Start protflio */
+
+.portfolio {
+    padding-block: 60px;
+    text-transform: capitalize;
+    background-color: var(--background-color);
+}
+.portfolio-content {
+    margin-top: 100px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+.port {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+}
+.port .text {
+    padding: 20px;
+}
+.port .text h3 {
+    margin: 0;
+}
+.port .text p {
+    color: #777;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+/* End protflio */
+
+/* Start About */
+
+.about {
+    padding-block: 60px 120px;
+    text-transform: capitalize;
+}
+.about-content {
+    margin-top: 100px;
+    display: flex;
+    justify-content: space-between;
+}
+.about .about-content .image {
+    position: relative;
+    text-align: center;
+    width: 275px;
+}
+.about .about-content .image img {
+    max-width: 100%;
+}
+.about .about-content .image::after {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: calc(100% + 80px);
+    background-color: #ecebed;
+    left: -20px;
+    top: -40px;
+    z-index: -1;
+}
+.about .about-content .image::before {
+    content: "";
+    position: absolute;
+    width: 200px;
+    height: 100%;
+    background: conic-gradient(
+        from 0deg at 40% 80%,
+        #fff 90deg,
+        var(--maincolor) 90deg 360deg
+    );
+    right: -150px;
+    top: -40px;
+    z-index: -1;
+}
+.about .about-content .text {
+    width: calc(100% - 500px);
+}
+@media (max-width: 991px) {
+    .about .about-content .image::before {
+        display: none;
+    }
+    .about .about-content .image::after {
+        display: none;
+    }
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+        place-items: center;
+    }
+    .about .about-content .text {
+        width: 100%;
+    }
+}
+.about .about-content .text p:nth-child(1) {
+    line-height: 2;
+    font-weight: bold;
+    margin-bottom: 50px;
+}
+.about .about-content .text p:nth-child(3) {
+    line-height: 2;
+    color: #777;
+}
+.about .about-content .text hr {
+    width: 50%;
+    display: inline-block;
+    border-color: var(--maincolor);
+}
+
+/* Do Not Forget The Best Way To Edit (hr) IS >
+    display: inline-block;
+    border-color: var(--maincolor);
+    And To Edit Image >
+    give img: max-width: 100%; and parent relative and you can control width , height from parent
+    Do Not Forget Media Like Any Property Who come Last Took Like !important declartion
+ */
+
+/* End About */
+
+/* Start Contact */
+
+.contact {
+    padding-block: 60px;
+    text-transform: capitalize;
+    background-color: var(--background-color);
+}
+.contact-content {
+    margin-top: 100px;
+    text-align: center;
+}
+.contact-content .label {
+    font-size: 35px;
+    font-weight: 800;
+    letter-spacing: -2px;
+    color: var(--secoudry-color);
+    margin-bottom: 15px;
+}
+.contact-content .link {
+    font-size: 35px;
+    font-weight: 800;
+    letter-spacing: -2px;
+    color: var(--maincolor);
+    margin-bottom: 15px;
+    text-decoration: none;
+}
+@media (max-width: 767px) {
+    .contact-content .label, .contact-content .link {
+        font-size: 25px;
+    }
+}
+.contact-content .social {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+.contact-content .social i {
+    margin-left: 10px;
+}
+
+/* End Contact */
+
+/* Start Footer  */
+
+.footer {
+    padding: 10px;
+    background-color: var(--secoudry-color);
+    text-align: center;
+    color: white;
+    font-size: 18px;
+}
+.footer span {
+    color: var(--maincolor);
+    font-weight: bold;
+}
+
+
+/* End Footer */
